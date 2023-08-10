@@ -1,10 +1,127 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+	ViewData["Title"] = "Inicio";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+	<header class="mb-5 bg-info bg-gradient rounded">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<img class="rounded-circle img-fluid mt-4 mb-4" src="https://media.licdn.com/dms/image/D4D03AQHzIpHwdWcYxg/profile-displayphoto-shrink_400_400/0/1675968716385?e=1697068800&v=beta&t=EzSkokzcfljPLfGGpAXk6pzTRhpODCsrtMA46SI-wwM" alt="Profile image"/>
+				</div>
+				<div class="col-md-9">
+					<h1 class="display-4">Nicolás Casais Dassie</h1>
+					<h3> Desarrollador de Software</h3>
+					<p class="border-top pt-3 fs-3"> Estudiante avanzado de programación en UTN. Busco mi primer trabajo como desarrollador que me permita aplicar y potenciar los conocimientos adquiridos en estos años, tanto en la universidad como de manera autodidacta.</p>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main class="container">
+		<div class="container text-start" id="informacion">
+			<div class="row">
+				<div class="col-md ">
+					<h2 class="mt-3 mb-3 text-center"> Información General</h2>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item list-group-item-action">
+							<a class="btn" href="https://github.com/nicocasaisd" target="_blank"><i class="fa-brands fa-github fa-2xl"></i> Perfil de Github</a>
+						</li>
+						<li class="list-group-item list-group-item-action">
+							<a class="btn" href="https://www.linkedin.com/in/nicocasaisd/" target="_blank"><i class="fa-brands fa-linkedin fa-2xl"></i> Perfil de LinkedIn</a>
+						</li>
+						<li class="list-group-item list-group-item-action">
+							<a class="btn" href="mailto:nicolas.casais.dassie@gmail.com" target="_blank"><i class="fa-regular fa-envelope fa-2xl"></i> E-mail</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md">
+					<h2 class="mt-3 mb-3 text-center"> Skills</h2>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">
+							<p class="fw-bold">C#</p>
+						</li>
+						<li class="list-group-item" >
+							<p class="fw-bold">.Net Framework</p>
+						</li>
+						<li class="list-group-item" >
+							<p class="fw-bold">ASP.NET</p>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="container py-3" id="academica">
+			<h2 class="mb-3 mt-3">Formación Académica</h2>
+			<ul class="list-group list-group-flush">
+			  <li class="list-group-item list-group-item-action">
+				<h5 class="text-primary">Tecnicatura Universitaria en Programación. UTN-FRA</h5>
+				<h6>2022-En Curso </h6>
+				<p>Programación Orientada a Objetos (POO). Bases de Datos. Desarrollo de software. Desarrollo Web</p>
+			  </li>
+			  <li class="list-group-item list-group-item-action">
+				<h5 class="text-primary">Licenciatura en Audiovisión. UNLa </h5>
+				<h6>2012-2020. (Graduado) </h6>
+				<p> Tecnologías audiovisuales. Beca de investigación CIN. Participación en proyectos de investigación. Procesamiento de señales con lenguaje MATLAB.</p>
+			  </li>
+			</ul>
+		</div>
+
+		<div class="container  py-3" id="idiomas">
+			<h2 class="mb-3 mt-3">Idiomas</h2>
+			<ul class="list-group list-group-flush">
+			  <li class="list-group-item list-group-item-action">
+				<h6 class="text-primary">Inglés - Nivel Avanzado.</h6>
+				<h7>First Certificate Exam. (B2) </h7>
+			  </li>
+			</ul>
+		</div>
+
+		<div class="container  py-3" id="laboral">
+			<h2 class="mb-3 mt-3">Experiencia Laboral</h2>
+			<ul class="list-group list-group-flush">
+			  <li class="list-group-item list-group-item-action">
+				<h5 class="text-primary">Técnico en sonido e iluminación.</h5>
+				<h6>2015-Actualidad </h6>
+				<p>Armado y configuración de sistemas de refuerzo sonoro e iluminación para grandes eventos en vivo. Logística y planificación. Coordinación de equipo.</p>
+			  </li>
+			</ul>
+		</div>
+
+		<div class="container  py-3" id="contacto">
+			<h2> Contacto</h2>
+
+			<div class="container">
+				<form method="POST">
+					<div class="mb-3">
+						<label for="nombre" class="form-label">Nombre</label> <br />
+						<input type="text" id="nombre" name="nombre" class="form-control"/> <br />
+					</div>
+
+					<div class="mb-3">
+						<label for="apellido" class="form-label">Apellido</label> <br />
+						<input type="text" id="apellido" name="apellido" class="form-control"/> <br />
+					</div>
+
+					<label for="mensaje" class="form-label">Mensaje</label> <br />
+					<textarea id="mensaje" name="mensaje" style="height:200px" class="form-control"></textarea> <br />
+
+					<input type="submit" value="Submit" class="btn btn-primary"/>
+				</form>
+
+						@if (Model.enviado)
+						{
+						<br />
+							<div class="alert alert-success"> 
+						<p > Su mensaje ha sido enviado correctamente. </p>
+							</div>
+						}
+			</div>
+		</div>
+
+	</main>
 </div>
